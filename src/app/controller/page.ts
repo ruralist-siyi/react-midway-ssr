@@ -1,7 +1,7 @@
 import { controller, get, provide, inject, Context } from 'midway'
 import { Config } from 'ykfe-utils'
 import renderToStream from 'ykfe-utils/lib/renderToStream'
-import { IApiService } from '../../interface'
+import { ArticleService } from '../../interface'
 
 const ssrConfig: Config = require('../../../config/config.ssr')
 
@@ -12,15 +12,15 @@ export class Page {
   @inject()
   ctx: Context
 
-  @inject('ApiService')
-  service: IApiService
+  @inject('ArticleOperateService')
+  service: ArticleService
 
   async index () {
     try {
       // Page为webpack打包的chunkName，项目默认的entry为Page
       this.ctx.type = 'text/html'
       this.ctx.status = 200
-      this.ctx.apiService = this.service.index // 将service挂载到上下文对象
+      this.ctx.apiService = this.service.queryList // 将service挂载到上下文对象
       const config = Object.assign(this.ctx.app.config, ssrConfig)
       const stream = await renderToStream(this.ctx, config)
       this.ctx.body = stream

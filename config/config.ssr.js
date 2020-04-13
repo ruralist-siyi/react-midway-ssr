@@ -6,12 +6,12 @@ module.exports = {
     {
       path: '/',
       exact: true,
-      Component: () => (require('@/page/index').default), // 这里使用一个function包裹为了让它延迟require
+      Component: () => (require('@/page/home').default), // 这里使用一个function包裹为了让它延迟require
       controller: 'page',
       handler: 'index'
     },
     {
-      path: '/news/:id',
+      path: '/about',
       exact: true,
       Component: () => (require('@/page/news').default),
       controller: 'page',

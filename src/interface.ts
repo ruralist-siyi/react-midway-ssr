@@ -1,15 +1,18 @@
 
-export interface IApiResult {
-  news: NewsItem[]
+export interface ArticleListResult {
+  articleList: ArticleItem[]
 }
 
-interface NewsItem {
+interface ArticleItem {
   id: string,
-  title: string
+  title: string,
+  content: string,
+  time: string
 }
+
 /**
  * @description Api-Service abstractions
  */
-export interface IApiService {
-  index (): Promise<IApiResult>
+export interface ArticleService {
+  queryList (): Promise<ArticleListResult>
 }

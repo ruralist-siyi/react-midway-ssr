@@ -1,22 +1,21 @@
-.normal {
-    font-family: Georgia, sans-serif;
-    text-align: center;
-}
 body {
+  background-color: #f9f8fb;
+}
+
+.wrap-content {
+  font-family: Georgia, sans-serif;
+  display: flex;
+  flex-wrap: nowrap;
+  .left-menu {
+    width: 450px;
+    // background-color: #f9f8fb;
     background-color: #f2f3f5;
-}
-.title {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 55px;
-    background-color: darkslateblue;
-    color: #fff;
-}
-.author {
-    position: absolute;
-    font-size: 15px;
-    bottom: 10px;
-    right: 100px;
+    height: 100vh;
+    width: 25%;
+    padding-top: 10px;
+  }
+  .content {
+    flex-grow: 1;
+    padding: 40px;
+  }
 }

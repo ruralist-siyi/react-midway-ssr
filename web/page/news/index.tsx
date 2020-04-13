@@ -16,19 +16,19 @@ const mockData: MockData = {
 interface Props {
   newsDetail: string
 }
-const News: SFC<Props> = (props: Props) => {
+const About: SFC<Props> = (props: Props) => {
   return (
-    <div className='news-container' >
-      文章详情: {props.newsDetail}
+    <div className='about' >
+      About
     </div>
   )
 }
 
-News.getInitialProps = (ctx) => {
-  const newsId = __isBrowser__ ? (ctx as RouteComponentProps<{id: string}>).match.params.id : (ctx as Context).request.path.split('/')[2]
-  return Promise.resolve({
-    newsDetail: mockData[newsId]
-  })
-}
+// News.getInitialProps = (ctx) => {
+//   const newsId = __isBrowser__ ? (ctx as RouteComponentProps<{id: string}>).match.params.id : (ctx as Context).request.path.split('/')[2]
+//   return Promise.resolve({
+//     newsDetail: mockData[newsId]
+//   })
+// }
 
-export default News
+export default About
