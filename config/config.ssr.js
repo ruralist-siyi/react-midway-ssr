@@ -13,7 +13,7 @@ module.exports = {
     {
       path: '/about',
       exact: true,
-      Component: () => (require('@/page/news').default),
+      Component: () => (require('@/page/about').default),
       controller: 'page',
       handler: 'index'
     }

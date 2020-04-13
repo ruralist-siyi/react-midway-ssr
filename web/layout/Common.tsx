@@ -3,7 +3,7 @@ import SideMenu from '../components/SideMenu/index';
 import './index.less';
 
 interface Props {
-  content: JSX.Element | null
+  content: JSX.Element | null | undefined
 }
 
 const CommonLayout: SFC<Props> = (props: Props): JSX.Element => {
