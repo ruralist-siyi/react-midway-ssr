@@ -1,6 +1,5 @@
 import React from 'react';
 import SideMenu from '../components/SideMenu/index';
-import './index.less';
 
 interface Props {
   content: JSX.Element | null | undefined

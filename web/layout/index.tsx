@@ -24,6 +24,7 @@ const Layout: SFC<LayoutProps> = (props: LayoutProps): JSX.Element | null => {
   } else {
     const { serverData } = props.layoutData;
     const { injectCss, injectScript } = props.layoutData.app.config;
+    // console.log(props.layoutData.app.config);
     return (
       <html lang='en'>
         <head>

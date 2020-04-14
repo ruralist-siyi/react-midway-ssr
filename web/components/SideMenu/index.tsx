@@ -9,24 +9,14 @@ const SideMenu: React.SFC<Props> = (props: Props) => {
   const [currentPath, setCurrentPath] = useState<string>('/');
   const { pathname } = useLocation();
 
-  useEffect(() => {
-    if (pathname === currentPath) return;
+  if (pathname !== currentPath) {
     setCurrentPath(pathname);
-  }, []);
-
-  const navClick = (path: string) => {
-    if (path === currentPath) return;
-    setCurrentPath(path);
-  };
-
+  }
   return (
     <div className='left-nav'>
       <ul id='nav'>
         <Link
           to={'/'}
-          onClick={() => {
-            navClick('/');
-          }}
           className={currentPath === '/' ? 'on' : ''}
         >
           <span className='author'>Siyi</span>
@@ -34,9 +24,6 @@ const SideMenu: React.SFC<Props> = (props: Props) => {
         </Link>
         <Link
           to={'/about'}
-          onClick={() => {
-            navClick('/about');
-          }}
           className={currentPath === '/about' ? 'on' : ''}
         >
           关于

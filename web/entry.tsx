@@ -46,7 +46,7 @@ const clientRender = async (): Promise<void> => {
 const serverRender = async (ctx: Context): Promise<JSX.Element> => {
   // 服务端渲染 根据ctx.path获取请求的具体组件，调用getInitialProps并渲染
   console.log('__isBrowser__', __isBrowser__);
-  console.log('ctx', ctx);
+  // console.log('ctx', ctx);
   const ActiveComponent = getComponent(routes, ctx.path)();
   const Layout = ActiveComponent.Layout || defaultLayout;
   const serverData = ActiveComponent.getInitialProps

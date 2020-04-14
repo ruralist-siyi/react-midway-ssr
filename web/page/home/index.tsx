@@ -2,12 +2,21 @@ import React from 'react';
 import './index.less';
 
 interface Props {
+  articleList: any
 }
 
 const Home: SFC<Props> = (props: Props): JSX.Element => {
+ const {articleList} = props;
+ let html = '';
+ console.log(333, articleList);
+  for(let item of articleList) {
+    console.log(222, item.html);
+    html = item.html;
+  }
   return (
     <div className='home-wrap'>
       Home
+      <div dangerouslySetInnerHTML={{__html:html}}></div>
     </div>
   );
 };
