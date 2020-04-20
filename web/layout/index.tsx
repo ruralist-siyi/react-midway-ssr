@@ -35,7 +35,7 @@ const Layout: SFC<LayoutProps> = (props: LayoutProps): JSX.Element | null => {
             content='width=device-width, initial-scale=1, shrink-to-fit=no'
           />
           <meta name='theme-color' content='#000000' />
-          <title>Blog</title>
+          <title>React SSR</title>
           {injectCss &&
             injectCss.map((item: string) => (
               <link rel='stylesheet' href={item} key={item} />
