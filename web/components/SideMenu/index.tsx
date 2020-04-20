@@ -15,17 +15,11 @@ const SideMenu: React.SFC<Props> = (props: Props) => {
   return (
     <div className='left-nav'>
       <ul id='nav'>
-        <Link
-          to={'/'}
-          className={currentPath === '/' ? 'on' : ''}
-        >
+        <Link to={'/'} className={currentPath === '/' ? 'on' : ''}>
           <span className='author'>Siyi</span>
           <br /> 保持热情，持续学习
         </Link>
-        <Link
-          to={'/about'}
-          className={currentPath === '/about' ? 'on' : ''}
-        >
+        <Link to={'/about'} className={currentPath === '/about' ? 'on' : ''}>
           关于
         </Link>
       </ul>

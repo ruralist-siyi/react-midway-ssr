@@ -7,11 +7,13 @@ import Common from './Common';
 
 const commonNode = (props: LayoutProps) =>
   // 为了同时兼容ssr/csr请保留此判断，如果你的layout没有内容请使用 props.children ?  props.children  : ''
-  props.children ? (
-    <div className='normal'>
+  props.children ?
+    (
+      <div className='normal'>
       <Common content={props.children} />
     </div>
-  ) : null;
+    )
+  : null;
 
 interface LayoutProps {
   layoutData: Context;
@@ -24,7 +26,6 @@ const Layout: SFC<LayoutProps> = (props: LayoutProps): JSX.Element | null => {
   } else {
     const { serverData } = props.layoutData;
     const { injectCss, injectScript } = props.layoutData.app.config;
-    // console.log(props.layoutData.app.config);
     return (
       <html lang='en'>
         <head>

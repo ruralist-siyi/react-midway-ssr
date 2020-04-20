@@ -29,6 +29,16 @@ export class Page {
     }
   }
 
+  @get('/queryArticleList')
+  async queryList() {
+    try {
+      this.ctx.status = 200;
+      this.ctx.body = await this.service.queryList();
+    } catch (error) {
+      this.ctx.logger.error(`Page Controller queryList Error`, error)
+    }
+  }
+
 }
 @provide()
 @controller('/user')

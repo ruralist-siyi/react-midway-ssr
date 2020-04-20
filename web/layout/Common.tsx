@@ -12,7 +12,7 @@ const CommonLayout: SFC<Props> = (props: Props): JSX.Element => {
         <SideMenu />
       </div>
       <div className='content'>
-        {props.content}
+        {props.content ? props.content : null}
       </div>
     </div>
   );

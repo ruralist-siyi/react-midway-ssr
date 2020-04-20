@@ -5,7 +5,7 @@ interface Props {
 const About: SFC<Props> = (props: Props) => {
   return (
     <div className='about' >
-      About
+      React SSR 实践
     </div>
   )
 }

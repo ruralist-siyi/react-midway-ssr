@@ -8,6 +8,7 @@ import defaultLayout from './layout';
 const { routes } = require('../config/config.ssr');
 
 const clientRender = async (): Promise<void> => {
+  // console.log('window.__USE_SSR__', window.__USE_SSR__);
   // 客户端渲染||hydrate
   ReactDOM[window.__USE_SSR__ ? 'hydrate' : 'render'](
     <BrowserRouter>
@@ -45,8 +46,7 @@ const clientRender = async (): Promise<void> => {
 
 const serverRender = async (ctx: Context): Promise<JSX.Element> => {
   // 服务端渲染 根据ctx.path获取请求的具体组件，调用getInitialProps并渲染
-  console.log('__isBrowser__', __isBrowser__);
-  // console.log('ctx', ctx);
+  // console.log('serverRender', '__isBrowser__', __isBrowser__);
   const ActiveComponent = getComponent(routes, ctx.path)();
   const Layout = ActiveComponent.Layout || defaultLayout;
   const serverData = ActiveComponent.getInitialProps
@@ -61,5 +61,7 @@ const serverRender = async (ctx: Context): Promise<JSX.Element> => {
     </StaticRouter>
   );
 };
+
+// console.log('test', __isBrowser__);
 
 export default __isBrowser__ ? clientRender() : serverRender;
